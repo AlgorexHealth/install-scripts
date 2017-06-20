@@ -5,3 +5,4 @@ sudo yum install -y git
 sudo yum install -y curl
 
 curl -L https://github.com/reverendpaco/vimrc/archive/master.tar.gz | tar xzv && mv vimrc-master .vim
+curl -L  https://github.com/AlgorexHealth/install-scripts | tar xzv && mv install-scripts/.tmu* .. && mv install-scripts/tmu* ..
