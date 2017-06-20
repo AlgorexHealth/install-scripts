@@ -1,2 +1,2 @@
-Session^Netstat^/home/ec2-user/^sudo watch -c netstat -tlnp
+Session^Netstat^/home/ec2-user/^sudo watch netstat -tlnp
 Session^Shell^/home/ec2-user/^#ls -l
