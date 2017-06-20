@@ -1,3 +1,2 @@
-Jupyter^Jupyter Netstat^/home/vagrant/^sudo watch -c netstat -tlnp
-Jupyter^Jupyter Shell^/home/vagrant/^source demo/bin/activate
-Jupyter^Jupyter Server^/home/vagrant/^source demo/bin/activate && jupyter notebook --ip=0.0.0.0 --no-browser  --NotebookApp.token=''
+Session^Netstat^/home/ec2-user/^sudo watch -c netstat -tlnp
+Session^Shell^/home/ec2-user/^#ls -l
