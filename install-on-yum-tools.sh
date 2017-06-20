@@ -1,7 +1,7 @@
 sudo yum -y update
-yum install tree
-yum install tmux
-yum install git
-yum install curl
+sudo yum install -y tree
+sudo yum install -y tmux
+sudo yum install -y git
+sudo yum install -y curl
 
 curl -L https://github.com/reverendpaco/vimrc/archive/master.tar.gz | tar xzv && mv vimrc-master .vim
