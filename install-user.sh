@@ -14,3 +14,4 @@ sudo mount --bind /ftp /jail/$1/data
 ahh=`head /dev/urandom | tr -dc A-Za-z0-9 | head -c 8 ; echo ''`
 sudo usermod -p `openssl passwd $ahh` $1
 echo $ahh
+sudo chage -d 0 $1
