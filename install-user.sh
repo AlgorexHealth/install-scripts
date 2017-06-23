@@ -8,5 +8,5 @@ sudo chmod 600 /home/smdermo/.ssh/authorized_keys
 sudo chown smdermo:smdermo -R /home/smdermo/.ssh
 
 sudo mkdir -p /jail/smdermo/data
-sudo chown smdermo:smdermo /jail/smdermo/data
+sudo chown concierge:ftpgroup /jail/smdermo/data
 sudo mount --bind /ftp /jail/smdermo/data
