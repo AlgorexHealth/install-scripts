@@ -1,4 +1,4 @@
 sudo groupadd ftpgroup
-sudo adduser ftp -G ftpgroup
+sudo adduser concierge -G ftpgroup
 sudo mkdir /ftp
-sudo chown ftp:ftpgroup /ftp
+sudo chown concierge:ftpgroup /ftp
