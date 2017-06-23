@@ -12,5 +12,5 @@ sudo chown concierge:ftpgroup /jail/$1/data
 sudo mount --bind /ftp /jail/$1/data
 
 ahh=`head /dev/urandom | tr -dc A-Za-z0-9 | head -c 13 ; echo ''`
-sudo usermod -p `openssl $ahh` $1
+sudo usermod -p `openssl passwd $ahh` $1
 echo $ahh
