@@ -2,6 +2,19 @@ sudo groupadd ftpgroup
 sudo adduser concierge -G ftpgroup
 sudo mkdir /ftp
 sudo chown concierge:ftpgroup /ftp
-sudo su concierge
 
-s3fs -o iam_role='MPHC-DataConcierge'  algorex-mphc-s3-secure  /ftp -d -d -f -o f2 -o curldbg -o endpoint="us-gov-west-1"  -o url=https://s3-us-gov-west-1.amazonaws.com -o use_sse=kmsid:'arn:aws-us-gov:kms:us-gov-west-1:395322614640:key/f6f248b0-d1b3-420f-a8b4-aed46d31ed89'
+sudo cat >> /etc/ssh/sshd_config <<HERE
+
+AuthenticationMethods "publickey,keyboard-interactive"
+
+Match Group ftpgroup
+        ChrootDirectory /jail/%u
+        ForceCommand internal-sftp
+        AllowTcpForwarding no
+HERE
+sudo sed -i 's/^Subsystem sftp.*$/Subsystem sftp       internal-sftp/g' /etc/ssh/sshd_config
+sudo sed -i 's/^ChallengeResponseAuthentication.*$/ChallengeResponseAuthentication yes/g' /etc/ssh/sshd_config
+sudo sed -i 's/^#.*user_allow_other.*$/user_allow_other/g' /etc/fuse.conf 
+sudo service restart sshd
+
+
