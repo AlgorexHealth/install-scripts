@@ -10,3 +10,7 @@ sudo chown $1:$1 -R /home/$1/.ssh
 sudo mkdir -p /jail/$1/data
 sudo chown concierge:ftpgroup /jail/$1/data
 sudo mount --bind /ftp /jail/$1/data
+
+ahh=`head /dev/urandom | tr -dc A-Za-z0-9 | head -c 13 ; echo ''`
+sudo usermod -p $ahh $1
+echo $ahh
