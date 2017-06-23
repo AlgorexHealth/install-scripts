@@ -15,6 +15,6 @@ HERE
 sudo sed -i 's/^Subsystem sftp.*$/Subsystem sftp       internal-sftp/g' /etc/ssh/sshd_config
 sudo sed -i 's/^ChallengeResponseAuthentication.*$/ChallengeResponseAuthentication yes/g' /etc/ssh/sshd_config
 sudo sed -i 's/^#.*user_allow_other.*$/user_allow_other/g' /etc/fuse.conf 
-sudo service restart sshd
+sudo service  sshd restart
 
 
