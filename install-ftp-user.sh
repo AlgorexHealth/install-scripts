@@ -3,7 +3,7 @@ sudo adduser concierge -G ftpgroup
 sudo mkdir /ftp
 sudo chown concierge:ftpgroup /ftp
 
-sudo cat >> /etc/ssh/sshd_config <<HERE
+sudo sh -c 'cat >> /etc/ssh/sshd_config <<HERE
 
 AuthenticationMethods "publickey,keyboard-interactive"
 
@@ -11,7 +11,7 @@ Match Group ftpgroup
         ChrootDirectory /jail/%u
         ForceCommand internal-sftp
         AllowTcpForwarding no
-HERE
+HERE'
 sudo sed -i 's/^Subsystem sftp.*$/Subsystem sftp       internal-sftp/g' /etc/ssh/sshd_config
 sudo sed -i 's/^ChallengeResponseAuthentication.*$/ChallengeResponseAuthentication yes/g' /etc/ssh/sshd_config
 sudo sed -i 's/^#.*user_allow_other.*$/user_allow_other/g' /etc/fuse.conf 
