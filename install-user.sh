@@ -1,5 +1,5 @@
 sudo adduser smdermo -G ftpgroup
-sudo usemod smdermo -g ftpgroup
+sudo user smdermo -g ftpgroup
 sudo mkdir /home/smdermo/.ssh
 sudo chmod 700 .ssh
 sudo ssh-keygen -t rsa  -b 4096 -f /home/smdermo/.ssh/smdermo.pem -N ''
