@@ -1,2 +1,3 @@
 Session^Netstat^/home/ec2-user/^sudo watch netstat -tlnp
 Session^Shell^/home/ec2-user/^#ls -l
+Session^S3FS^/home/ec2-user/^#sudo su concierge && RUNS3FS command here
