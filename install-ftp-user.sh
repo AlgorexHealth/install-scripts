@@ -7,6 +7,11 @@ sudo sh -c 'cat >> /etc/ssh/sshd_config <<HERE
 
 AuthenticationMethods "publickey,keyboard-interactive"
 
+Match User ec2-user
+   AuthenticationMethods "publickey"
+   PasswordAuthentication no
+
+
 Match Group ftpgroup
         ChrootDirectory /jail/%u
         ForceCommand internal-sftp
