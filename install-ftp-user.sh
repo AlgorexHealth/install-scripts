@@ -12,13 +12,11 @@ Match User ec2-user
    PasswordAuthentication no
 
 
-Match Group ftpgroup
+Match Group ftpgroup,!algorexdev
         ChrootDirectory /jail/%u
         ForceCommand internal-sftp
         AllowTcpForwarding no
 
-Match Group algorexdev
-        AllowTcpForwarding yes
 HERE'
 sudo sed -i 's/^Subsystem sftp.*$/Subsystem sftp       internal-sftp/g' /etc/ssh/sshd_config
 sudo sed -i 's/^ChallengeResponseAuthentication.*$/ChallengeResponseAuthentication yes/g' /etc/ssh/sshd_config
